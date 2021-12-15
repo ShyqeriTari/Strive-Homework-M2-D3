@@ -1,17 +1,89 @@
 <!DOCTYPE html>
 <!-- saved from url=(0436)https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/904458868293190.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2TAWW44RCEE6YREN%2F20211215%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20211215T130556Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27M2-D3.html&X-Amz-Signature=269da1a5ab1d38ae9a4af8b65ddf7d213adb097c60706799ce52f246cded3783 -->
 <html lang="en"><!-- MANDATORY JS EXERCISES (continue from yesterday's file for this exercise)
-    1) Create two inputs for picking up colors in the page, and a button with "Apply Colors" as text
-    2) Grab all <li> in the page from the DOM, and save them in a variable called "listItems"
-    3) Grab the inputs references via DOM manipulation and save them in variables
-    4) Create a function and attach it to the "Apply Colors" button click event
-    5) Cycle listItems inside the function. Verify that the function and the loop work by logging in the console 
-        each item from the loop every time the button gets clicked
-    6) Move the inputs references in the function. Use the first input value as background-color for the item, and the second one for the text color.
+   
+--><head>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
-    If you receive black as a color check where you have the inputs references.
-    You should now see the list-items color and background-color change at the click of the button.
---><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<style>
+
+.div-img{
+
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+#nav img{
+
+    width: 50px;
+    height: 50px;
+}
+
+.jumboColor{
+
+    background-color: yellow;
+}
+
+#dealOfTheWeek h1{
+            padding-top: 1%;
+            padding-bottom: 1%;
+            text-align: center;
+            background-color: rgb(9, 255, 0);
+        }
+
+        #welcomeSummer h1{
+            padding-top: 1%;
+            padding-bottom: 1%;
+            text-align: center;
+            background-color: rgb(38, 0, 255);
+            color: white;
+        }
+
+        #dealOfTheDay h1{
+            padding-top: 1%;
+            padding-bottom: 1%;
+            text-align: center;
+            background-color: rgb(212, 0, 255);
+            color: white;
+        }
+
+        #dealOfTheDay img{
+
+            width: 100%;
+            height: fit-content;
+        }
+
+        #lastMinutes h1{
+            padding-top: 2%;
+            padding-bottom: 1%;
+            text-align: center;
+            background-color: rgb(255, 0, 0);
+            color: white;
+        }
+
+        #lastMinutes img{
+    height: 100%;
+    width: 100%;
+    padding-bottom: 12%;
+    object-fit: cover;
+}
+
+#testimonials h1{
+            padding-top: 1%;
+            padding-bottom: 1%;
+            text-align: center;
+            color: rgb(117, 66, 0);
+        }
+
+</style>
+
     <!-- M2-D3 ASSIGNMENT RULES
         - This challenge should be done in pairs, go in Eduflow to find who you are paired with
         - Implement one exercise each, switching side from driver and navigator frequently
@@ -29,8 +101,16 @@
         In thins page you will add destinations of places you're dreaming to go to in the near future!
 
 
-        Ex 1) Implement a navigation bar. Connected to all the sections of the page to the menu items. 
-        Ex 2) Add a logo into the navigation bar (can be any image)
+        Ex 1) Implement a navigation bar. Connected to all the sections of the page to the menu items. -->
+
+
+        
+
+
+
+
+
+       <!--Ex 2) Add a logo into the navigation bar (can be any image)
         Ex 3) Add a Jumbotron section with the name and the claim of the tour operator agency
         Ex 4) Implement the "Deal of the Week" section. In this section you'll display 4 destinations.
          In this section you should have:
@@ -61,8 +141,339 @@
         Ex 15) Create a function that adds a "HOT" badge to all the "Welcome Summer" offers
         Ex 16) Create a function to delete all "cards" from the page
       -->
+
+
+  
+
 </head>
 
 <body>
 
-</body></html>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="nav">
+            
+        <div class="div-img navbar-brand">
+            <img src="https://img.glyphs.co/img?q=85&w=900&src=aHR0cHM6Ly9zMy5tZWRpYWxvb3QuY29tL2Jsb2ctaW1hZ2VzL0JTQkwtSW1hZ2UtMDIuanBnP210aW1lPTIwMTkwMTAzMTY0NDU0" alt="Monst beautiful beach">
+            </div>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#dealOfTheWeek">DealOfweek<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#welcomeSummer">WekcSum</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#dealOfTheDay">DealOfday</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#lastMinutes">LastMin</a>
+              </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#testimonials">Testimonial</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+
+    <div class="p-5 mb-4 jumboColor rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">Gbemi travel agency</h1>
+          <p class="col-md-8 fs-4">It can always be a sunny day! Better if you enjoy it on the beach.</p>
+        </div>
+      </div>
+
+      <section id="dealOfTheWeek">
+
+        <h1>DEAL OF THE WEEK</h1>
+
+        <div class="row  cols-xl-4 cols-lg-3 cols-md-3 cols-sm-2 cols-xs-2">
+            <div class="col">
+              <div class="card h-100">
+                <img src="https://www.rollingstone.it/wp-content/uploads/2021/10/RHCP-2-Photo-Credit_-Clara-Balzary.jpg" class="card-img-top " alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">CALIFORNICATION - Red Hot Chilli Peppers</h5>
+                  <p class="card-text">An album of 30 songs</p>
+                <li class="card-text">15 songs - 127 minutes</li>
+                <li class="card-text">Rock</li>
+                <li class="card-text">Song1, Song2, Song3, Song4...</li>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="https://www.viagginews.com/wp-content/uploads/2019/08/78243ec6-e412-4bf6-97af-d02a4951cb91_large.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">IL TUO MONDO - Claudio Villa</h5>
+                  <p class="card-text">An album of 22 songs</p>
+                <li class="card-text">11 songs - 904 minutes</li>
+                <li class="card-text">Pop</li>
+                <li class="card-text">Song1, Song2, Song3, Song4...</li>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="https://i.ytimg.com/vi/kTJczUoc26U/maxresdefault.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">STAY - Justin Bieber</h5>
+                  <p class="card-text">An album of 17 songs</p>
+                <li class="card-text">49 songs - 5674 minutes</li>
+                <li class="card-text">Trap</li>
+                <li class="card-text">Song1, Song2, Song3, Song4...</li>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="http://corsiinglesemilano.eu/wp-content/uploads/Imagine-Dragons-Believer.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">BELIEVER - Imagine Dragons</h5>
+                  <p class="card-text">An album of 12 songs</p>
+                <li class="card-text">4 songs - 65 minutes</li>
+                <li class="card-text">Rock</li>
+                <li class="card-text">Song1, Song2, Song3, Song4...</li>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </section>
+
+      <section id="welcomeSummer">
+
+        
+        <div class="shadow-lg p-3 mb-5 bg-body rounded">
+
+            <h1>WELCOME SUMMER</h1>
+        <div class="row  row-cols-xl-6 row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-xs-2 ">
+            <div class="col ">
+              <div class="card h-100">
+                <img src="https://www.rollingstone.it/wp-content/uploads/2021/10/RHCP-2-Photo-Credit_-Clara-Balzary.jpg" class="card-img-top " alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">CALIFORNICATION - Red Hot Chilli Peppers</h5>
+                  <p class="card-text">An album of 30 songs</p>
+                <li class="card-text">15 songs - 127 minutes</li>
+                <li class="card-text">Rock</li>
+                <li class="card-text">Song1, Song2, Song3, Song4...</li>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="https://www.viagginews.com/wp-content/uploads/2019/08/78243ec6-e412-4bf6-97af-d02a4951cb91_large.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">IL TUO MONDO - Claudio Villa</h5>
+                  <p class="card-text">An album of 22 songs</p>
+                <li class="card-text">11 songs - 904 minutes</li>
+                <li class="card-text">Pop</li>
+                <li class="card-text">Song1, Song2, Song3, Song4...</li>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="https://i.ytimg.com/vi/kTJczUoc26U/maxresdefault.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">STAY - Justin Bieber</h5>
+                  <p class="card-text">An album of 17 songs</p>
+                <li class="card-text">49 songs - 5674 minutes</li>
+                <li class="card-text">Trap</li>
+                <li class="card-text">Song1, Song2, Song3, Song4...</li>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="http://corsiinglesemilano.eu/wp-content/uploads/Imagine-Dragons-Believer.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">BELIEVER - Imagine Dragons</h5>
+                  <p class="card-text">An album of 12 songs</p>
+                <li class="card-text">4 songs - 65 minutes</li>
+                <li class="card-text">Rock</li>
+                <li class="card-text">Song1, Song2, Song3, Song4...</li>
+                </div>
+              </div>
+            </div>
+          
+
+          <div class="col">
+            <div class="card h-100">
+              <img src="https://i.ytimg.com/vi/kTJczUoc26U/maxresdefault.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">STAY - Justin Bieber</h5>
+                <p class="card-text">An album of 17 songs</p>
+              <li class="card-text">49 songs - 5674 minutes</li>
+              <li class="card-text">Trap</li>
+              <li class="card-text">Song1, Song2, Song3, Song4...</li>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="http://corsiinglesemilano.eu/wp-content/uploads/Imagine-Dragons-Believer.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">BELIEVER - Imagine Dragons</h5>
+                <p class="card-text">An album of 12 songs</p>
+              <li class="card-text">4 songs - 65 minutes</li>
+              <li class="card-text">Rock</li>
+              <li class="card-text">Song1, Song2, Song3, Song4...</li>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+      </section>
+
+      <section id="dealOfTheDay" class="d-none d-sm-block" >
+
+        <h1>DEAL OF THE DAY</h1>
+
+        <div class="container ">
+        <div class="row">
+            <div class="col-8">
+<img src="https://static2-viaggi.corriereobjects.it/wp-content/uploads/2015/06/finlandia.jpg?v=354131" alt="FINLAND">
+
+            </div>
+            <div class="col-4">
+                <li>name</li>
+                <li>dates</li>
+                <li>price</li>
+                <p>description</p>
+            </div>
+          </div>
+        </div>
+
+
+      </section>
+
+      <section id="lastMinutes">
+<h1>LAST MINUTES</h1>
+
+<div class="row cols-xl-3 cols-lg-3 cols-md-3 cols-sm-2 cols-xs-2">
+    <div class="text-center col">
+        <img src="https://www.rollingstone.it/wp-content/uploads/2021/10/RHCP-2-Photo-Credit_-Clara-Balzary.jpg" class="rounded " alt="">
+      </div>
+      <div class="text-center col">
+        <img src="http://corsiinglesemilano.eu/wp-content/uploads/Imagine-Dragons-Believer.jpg" class="rounded " alt="">
+      </div>
+
+      <div class="text-center col">
+        <img src="https://fanart.tv/fanart/music/a39acc4a-985e-4173-a9ed-f325f2d3bc1c/albumcover/neon-future-ii-55ba9d64f3952.jpg" class="rounded" alt="">
+      </div>
+
+      <div class="text-center col">
+        <img src="http://corsiinglesemilano.eu/wp-content/uploads/Imagine-Dragons-Believer.jpg" class="rounded" alt="">
+      </div>
+</div>
+    
+
+    
+<div class="row cols-xl-3 cols-lg-3 cols-md-3 cols-sm-2 cols-xs-2">
+<div class="text-center col">
+    <img src="https://www.rollingstone.it/wp-content/uploads/2021/10/RHCP-2-Photo-Credit_-Clara-Balzary.jpg" class="rounded " alt="">
+  </div>
+  <div class="text-center col">
+    <img src="http://corsiinglesemilano.eu/wp-content/uploads/Imagine-Dragons-Believer.jpg" class="rounded " alt="">
+  </div>
+
+  <div class="text-center col">
+    <img src="https://fanart.tv/fanart/music/a39acc4a-985e-4173-a9ed-f325f2d3bc1c/albumcover/neon-future-ii-55ba9d64f3952.jpg" class="rounded" alt="">
+  </div>
+
+  <div class="text-center col">
+    <img src="http://corsiinglesemilano.eu/wp-content/uploads/Imagine-Dragons-Believer.jpg" class="rounded" alt="">
+  </div>
+</div>
+
+<div class="row cols-xl-3 cols-lg-3 cols-md-3 cols-sm-2 cols-xs-2">
+<div class="text-center col">
+    <img src="https://www.rollingstone.it/wp-content/uploads/2021/10/RHCP-2-Photo-Credit_-Clara-Balzary.jpg" class="rounded " alt="">
+  </div>
+  <div class="text-center col">
+    <img src="http://corsiinglesemilano.eu/wp-content/uploads/Imagine-Dragons-Believer.jpg" class="rounded " alt="">
+  </div>
+
+  <div class="text-center col">
+    <img src="https://fanart.tv/fanart/music/a39acc4a-985e-4173-a9ed-f325f2d3bc1c/albumcover/neon-future-ii-55ba9d64f3952.jpg" class="rounded" alt="">
+  </div>
+
+  <div class="text-center col">
+    <img src="http://corsiinglesemilano.eu/wp-content/uploads/Imagine-Dragons-Believer.jpg" class="rounded" alt="">
+  </div>
+</div>
+
+<div class="row cols-xl-3 cols-lg-3 cols-md-3 cols-sm-2 cols-xs-2">
+<div class="text-center col">
+    <img src="https://www.rollingstone.it/wp-content/uploads/2021/10/RHCP-2-Photo-Credit_-Clara-Balzary.jpg" class="rounded " alt="">
+  </div>
+  <div class="text-center col">
+    <img src="http://corsiinglesemilano.eu/wp-content/uploads/Imagine-Dragons-Believer.jpg" class="rounded " alt="">
+  </div>
+
+  <div class="text-center col">
+    <img src="https://fanart.tv/fanart/music/a39acc4a-985e-4173-a9ed-f325f2d3bc1c/albumcover/neon-future-ii-55ba9d64f3952.jpg" class="rounded" alt="">
+  </div>
+
+  <div class="text-center col">
+    <img src="http://corsiinglesemilano.eu/wp-content/uploads/Imagine-Dragons-Believer.jpg" class="rounded" alt="">
+  </div>
+</div>
+
+<div class="row cols-xl-3 cols-lg-3 cols-md-3 cols-sm-2 cols-xs-2">
+<div class="text-center col">
+    <img src="https://www.rollingstone.it/wp-content/uploads/2021/10/RHCP-2-Photo-Credit_-Clara-Balzary.jpg" class="rounded " alt="">
+  </div>
+  <div class="text-center col">
+    <img src="http://corsiinglesemilano.eu/wp-content/uploads/Imagine-Dragons-Believer.jpg" class="rounded " alt="">
+  </div>
+
+  <div class="text-center col">
+    <img src="https://fanart.tv/fanart/music/a39acc4a-985e-4173-a9ed-f325f2d3bc1c/albumcover/neon-future-ii-55ba9d64f3952.jpg" class="rounded" alt="">
+  </div>
+
+  <div class="text-center col">
+    <img src="http://corsiinglesemilano.eu/wp-content/uploads/Imagine-Dragons-Believer.jpg" class="rounded" alt="">
+  </div>
+</div>
+
+      </section>
+
+      <section id="testimonials">
+<h1>TESTIMONIALS</h1>
+
+<div class="row">
+    <div class="col-lg-4">
+      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+      <h2>Heading</h2>
+      <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+      <p><a class="btn btn-secondary" href="#">View details »</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+      <h2>Heading</h2>
+      <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+      <p><a class="btn btn-secondary" href="#">View details »</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+      <h2>Heading</h2>
+      <p>And lastly this, the third column of representative placeholder content.</p>
+      <p><a class="btn btn-secondary" href="#">View details »</a></p>
+    </div><!-- /.col-lg-4 -->
+  </div>
+      </section>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    
+</body>
+
+
+</html>
